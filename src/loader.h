@@ -21,15 +21,28 @@
 #define LOADER_H_
 
 #include "./product.h"
+#include "./amazon.h"
 
 #include <fstream>
 #include <vector>
 
-// TODO:
-// - list files
-// - map files on products
-std::vector<*Product> LoadFiles();
+namespace Load {
+  // TODO:
+  // - list files
+  // - map files on products
+  std::vector<Product> CSV(std::string folder = "resources/csv") {
+    std::vector<Product> products;
+    return products;
+  }
+  // TODO:
+  // - Read file
+  // - parse json
+  Amazon::Query Amazon(std::string file = "resources/user.json") {
+    std::string secret;
+    std::string access;
+    return Amazon::Query(secret, access);
+  }
 
-void Persist();
+}  // Load
 
 #endif  // LOADER_H_

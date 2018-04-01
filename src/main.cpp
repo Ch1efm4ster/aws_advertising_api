@@ -17,8 +17,14 @@
  */
 
 #include "./loader.h"
-#include "./amazon.h"
+
+#include <vector>
 
 int main() {
-
+  std::vector<Amazon::Article> articles;
+  Amazon::Query q = Load::Amazon();
+  std::vector<Product> myProducts = Load::CSV();
+  for (Product const &p: myProducts) {
+    articles.push_back(q.SearchProduct(p));
+  }
 }

@@ -27,16 +27,26 @@ namespace Amazon {
 
 class Product {
 public:
-  virtual std::string EAN() = 0;
+  virtual std::string EAN() const = 0;
+};
+
+class Article : Product {
+public:
+  Article() {}
+  virtual std::string EAN() const { return ean_; }
+private:
+  std::string ean_;
 };
 
 class Query {
 public:
-  Query() {};
+  Query(std::string const secret_key, std::string const access_key)
+    : secret_key_(secret_key), access_key_(access_key) {};
   // TODO:
-  Product SearchProduct(Product p) {}
+  Article SearchProduct(Product p) {}
 private:
-
+  std::string secret_key_;
+  std::string access_key_;
 };
 
 }  // Amazon

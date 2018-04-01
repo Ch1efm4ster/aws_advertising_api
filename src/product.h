@@ -27,7 +27,7 @@
 class Product : Amazon::Product {
 public:
   Product() {}
-  std::string EAN() const { return ean_; }
+  virtual std::string EAN() const { return ean_; }
   void set_EAN(const std::string& ean) { ean_ = ean; }
 private:
   // TODO: add items

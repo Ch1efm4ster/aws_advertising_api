@@ -3,7 +3,7 @@
 # See file LICENSE for detail at LICENSE file.
 
 CXX=g++
-CXXFLAGS=-std=c++14 -I ./src/ -isystem ./lib/ -isystem ./lib/stuff -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -c
+CXXFLAGS=-std=c++14 -I ./src/ -isystem ./lib/json -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -c
 
 SOURCEDIR=./src/
 
